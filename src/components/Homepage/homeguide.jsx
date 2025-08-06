@@ -30,32 +30,26 @@ export default function QuickGuide() {
         Here Is the Quick <span className="text-indigo-600">Guide.</span>
       </h1>
 
-      {steps.map((step, index) => {
-        const isEven = index % 2 !== 0;
-
-        return (
-          <div
-            key={index}
-            className={`flex flex-col sm:flex-row ${
-              isEven ? 'sm:flex-row-reverse' : ''
-            } items-center gap-6 mb-16`}
-          >
-            <img
-              src={step.img}
-              alt={`Step ${index + 1}`}
-              className="w-[140px] h-auto shrink-0"
-            />
-            <div className="sm:w-2/3">
-              <h2 className="text-indigo-600 text-lg font-semibold mb-2">
-                {step.title}
-              </h2>
-              <p className="text-gray-700 text-[15px] leading-relaxed">
-                {step.desc}
-              </p>
-            </div>
+      {steps.map((step, index) => (
+        <div
+          key={index}
+          className="flex flex-col sm:flex-row items-start sm:items-center gap-6 mb-12"
+        >
+          <img
+            src={step.img}
+            alt={`Step ${index + 1}`}
+            className="w-[140px] h-auto shrink-0"
+          />
+          <div>
+            <h2 className="text-indigo-600 text-lg font-semibold mb-2">
+              {step.title}
+            </h2>
+            <p className="text-gray-700 text-[15px] leading-relaxed">
+              {step.desc}
+            </p>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </section>
   );
 }
