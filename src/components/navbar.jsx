@@ -1,4 +1,6 @@
 import { BellIcon, UserIcon } from '@heroicons/react/24/outline';
+import { Link } from 'react-router-dom'
+
 
 export default function Navbar() {
   return (
@@ -10,18 +12,18 @@ export default function Navbar() {
 
       {/* Center - Navigation Links */}
       <ul className="flex space-x-6 text-sm">
-        <li className="relative">
+        <Link to='/' className="relative">
           <a href="#" className="hover:underline underline-offset-4">Home</a>
-        </li>
-        <li>
+        </Link>
+        <Link to='/guide'>
           <a href="#" className="hover:underline underline-offset-4">Guide</a>
-        </li>
-        <li className="relative">
+        </Link>
+        <Link to ='/dashboard' className="relative">
           <a href="#" className="border-b-2 border-white">Dashboard</a>
-        </li>
-        <li>
+        </Link>
+        <Link to='/about'>
           <a href="#" className="hover:underline underline-offset-4">About</a>
-        </li>
+        </Link>
       </ul>
 
       {/* Right - Icons */}
