@@ -15,7 +15,7 @@ const Footer = () => {
                     </p>
                 </div>
 
-                {/* Quick Links */}
+                {/* Quick Links of nav item*/}
                 <div className={styles.linksContainer}>
                     <h3 className={styles.linksTitle}>Quick link</h3>
                     <a href="#home" className={styles.linkItem}>Home</a>
@@ -23,7 +23,7 @@ const Footer = () => {
                     <a href="#contact" className={styles.linkItem}>Contact</a>
                 </div>
 
-                {/* Contact Info */}
+                {/* Contact Info data */}
                 <div className={styles.linksContainer}>
                     <h3 className={styles.linksTitle}>Contact us</h3>
                     <p>Kathmandu, Nepal</p>
@@ -32,10 +32,10 @@ const Footer = () => {
                 </div>
             </div>
 
-            {/* Divider */}
+            {/* foot Divider */}
             <hr className={styles.divider} />
 
-            {/* Bottom */}
+            {/* Bottom content */}
             <div className={styles.bottomSection}>
                 <p>© 2025 budget. All rights reserved.</p>
                 <div className={styles.bottomLinks}>
