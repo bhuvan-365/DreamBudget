@@ -8,8 +8,11 @@ function App() {
 
   return (
     <>
+//Navbar
       <Navbar />
+//home section 
       <HomeMain />
+//footer section 
       <Footer />
     </>
   )
