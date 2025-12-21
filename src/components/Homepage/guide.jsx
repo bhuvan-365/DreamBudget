@@ -1,8 +1,10 @@
 import { ChevronDownIcon, CheckCircleIcon, LightBulbIcon, SparklesIcon } from '@heroicons/react/24/outline';
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
+import gsap from 'gsap';
 
 export default function Guide() {
   const [expandedSection, setExpandedSection] = useState(0);
+  const detailsRefs = useRef([]);
 
   const sections = [
     {
@@ -260,52 +262,72 @@ export default function Guide() {
       content: 'Common questions answered',
       details: (
         <div className="space-y-4">
-          <details className="group border-l-4 border-blue-500 pl-4 cursor-pointer">
+          <details 
+            ref={(el) => detailsRefs.current[0] = el}
+            className="group border-l-4 border-blue-500 pl-4 cursor-pointer faq-item"
+            onToggle={(e) => handleDetailsToggle(e)}
+          >
             <summary className="flex items-center justify-between py-3 font-bold text-gray-800 hover:text-blue-600">
               <span>Can I change the salary distribution percentages?</span>
               <ChevronDownIcon className="w-5 h-5 group-open:rotate-180 transition" />
             </summary>
-            <div className="pb-3 text-gray-700">
+            <div className="faq-content pb-3 text-gray-700 opacity-0">
               Currently, the percentages are set to 30% savings, 40% investments, and 30% expenditure. These can be customized in the code easily. In future updates, we plan to make this adjustable from the UI.
             </div>
           </details>
 
-          <details className="group border-l-4 border-green-500 pl-4 cursor-pointer">
+          <details 
+            ref={(el) => detailsRefs.current[1] = el}
+            className="group border-l-4 border-green-500 pl-4 cursor-pointer faq-item"
+            onToggle={(e) => handleDetailsToggle(e)}
+          >
             <summary className="flex items-center justify-between py-3 font-bold text-gray-800 hover:text-green-600">
               <span>Are the return rates guaranteed?</span>
               <ChevronDownIcon className="w-5 h-5 group-open:rotate-180 transition" />
             </summary>
-            <div className="pb-3 text-gray-700">
+            <div className="faq-content pb-3 text-gray-700 opacity-0">
               No, these are estimated average returns based on historical data. Actual returns vary based on market conditions and the specific investments you choose. Use these projections for planning purposes only.
             </div>
           </details>
 
-          <details className="group border-l-4 border-purple-500 pl-4 cursor-pointer">
+          <details 
+            ref={(el) => detailsRefs.current[2] = el}
+            className="group border-l-4 border-purple-500 pl-4 cursor-pointer faq-item"
+            onToggle={(e) => handleDetailsToggle(e)}
+          >
             <summary className="flex items-center justify-between py-3 font-bold text-gray-800 hover:text-purple-600">
               <span>What if my salary changes monthly?</span>
               <ChevronDownIcon className="w-5 h-5 group-open:rotate-180 transition" />
             </summary>
-            <div className="pb-3 text-gray-700">
+            <div className="faq-content pb-3 text-gray-700 opacity-0">
               Simply enter your new salary amount in the input field and click Calculate. The dashboard will update all calculations and projections instantly.
             </div>
           </details>
 
-          <details className="group border-l-4 border-amber-500 pl-4 cursor-pointer">
+          <details 
+            ref={(el) => detailsRefs.current[3] = el}
+            className="group border-l-4 border-amber-500 pl-4 cursor-pointer faq-item"
+            onToggle={(e) => handleDetailsToggle(e)}
+          >
             <summary className="flex items-center justify-between py-3 font-bold text-gray-800 hover:text-amber-600">
               <span>Can I export my financial plan?</span>
               <ChevronDownIcon className="w-5 h-5 group-open:rotate-180 transition" />
             </summary>
-            <div className="pb-3 text-gray-700">
+            <div className="faq-content pb-3 text-gray-700 opacity-0">
               Currently, the dashboard displays your plan in the browser. You can take screenshots for your records. Export functionality may be added in future updates.
             </div>
           </details>
 
-          <details className="group border-l-4 border-red-500 pl-4 cursor-pointer">
+          <details 
+            ref={(el) => detailsRefs.current[4] = el}
+            className="group border-l-4 border-red-500 pl-4 cursor-pointer faq-item"
+            onToggle={(e) => handleDetailsToggle(e)}
+          >
             <summary className="flex items-center justify-between py-3 font-bold text-gray-800 hover:text-red-600">
               <span>Is my data saved anywhere?</span>
               <ChevronDownIcon className="w-5 h-5 group-open:rotate-180 transition" />
             </summary>
-            <div className="pb-3 text-gray-700">
+            <div className="faq-content pb-3 text-gray-700 opacity-0">
               Currently, data is stored only in your browser session. Once you refresh the page, you'll need to enter your salary again. Future versions may include local storage or cloud backup.
             </div>
           </details>
@@ -313,6 +335,27 @@ export default function Guide() {
       ),
     },
   ];
+
+  // GSAP Animation for FAQ content opening
+  const handleDetailsToggle = (e) => {
+    const content = e.target.querySelector('.faq-content');
+    if (!content) return;
+
+    if (e.target.open) {
+      // Opening animation
+      gsap.fromTo(
+        content,
+        { opacity: 0, height: 0, marginTop: -10 },
+        { opacity: 1, height: 'auto', marginTop: 0, duration: 0.5, ease: 'power2.out' }
+      );
+    } else {
+      // Closing animation
+      gsap.to(
+        content,
+        { opacity: 0, height: 0, marginTop: -10, duration: 0.3, ease: 'power2.in' }
+      );
+    }
+  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 py-8 px-4 md:px-8">
@@ -368,7 +411,9 @@ export default function Guide() {
                 className="w-full px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors"
               >
                 <div className="flex items-center space-x-4">
-                  <span className="text-3xl">{section.icon}</span>
+                  <span className="text-3xl transition-transform duration-300 hover:scale-110">
+                    {section.icon}
+                  </span>
                   <div className="text-left">
                     <h3 className="text-xl font-bold text-gray-800">
                       {section.title}
@@ -377,14 +422,14 @@ export default function Guide() {
                   </div>
                 </div>
                 <ChevronDownIcon
-                  className={`w-6 h-6 text-gray-400 transition-transform duration-300 ${
+                  className={`w-6 h-6 text-gray-400 transition-transform duration-500 ${
                     expandedSection === section.id ? 'rotate-180' : ''
                   }`}
                 />
               </button>
 
               {expandedSection === section.id && (
-                <div className="px-6 py-4 border-t border-gray-200 bg-gray-50">
+                <div className="accordion-content px-6 py-4 border-t border-gray-200 bg-gray-50">
                   {section.details}
                 </div>
               )}

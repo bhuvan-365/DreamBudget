@@ -1,0 +1,26 @@
+/* Guide Page - GSAP Animations for FAQ Only */
+
+/* FAQ details styling */
+details {
+  transition: all 0.3s ease;
+}
+
+details[open] {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Summary styling */
+summary {
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.2s ease;
+}
+
+summary:hover {
+  color: inherit;
+}
+
+/* FAQ content will be animated by GSAP */
+.faq-content {
+  will-change: opacity, height;
+}
