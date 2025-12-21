@@ -14,7 +14,7 @@ export default function InvestmentBreakdown({ investmentAmount, breakdown, split
       name: 'Gold', 
       amount: breakdown.gold, 
       percentage: split.gold,
-      icon: '🥇',
+      icon: '',
       color: 'border-l-4 border-yellow-500',
       bgColor: 'bg-yellow-50'
     },
@@ -22,7 +22,7 @@ export default function InvestmentBreakdown({ investmentAmount, breakdown, split
       name: 'Silver', 
       amount: breakdown.silver, 
       percentage: split.silver,
-      icon: '🥈',
+      icon: '',
       color: 'border-l-4 border-gray-400',
       bgColor: 'bg-gray-50'
     },
@@ -30,7 +30,7 @@ export default function InvestmentBreakdown({ investmentAmount, breakdown, split
       name: 'Fixed Deposit', 
       amount: breakdown.fd, 
       percentage: split.fd,
-      icon: '🏛️',
+      icon: '',
       color: 'border-l-4 border-purple-500',
       bgColor: 'bg-purple-50'
     },
@@ -38,7 +38,7 @@ export default function InvestmentBreakdown({ investmentAmount, breakdown, split
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-2xl font-bold text-gray-800 mb-4">💎 Investment Breakdown</h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-4"> Investment Breakdown</h2>
       
       <div className="mb-6">
         <p className="text-gray-700 font-semibold mb-2">Total Monthly Investment</p>

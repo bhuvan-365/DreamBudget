@@ -58,7 +58,7 @@ export default function Dashboard() {
       {/* Header */}
       <div className="mb-8">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
-          💰 Financial Planning Dashboard
+           Financial Planning Dashboard
         </h1>
         <p className="text-gray-600">
           Plan your finances smartly with our intelligent salary distribution system

@@ -60,21 +60,21 @@ export default function GoldGrowthProjection({ monthlyInvestment, returnRate }) 
   const milestones = [
     {
       years: 3,
-      icon: '📅',
+      icon: '',
       data: milestone3Years,
       color: 'border-l-4 border-blue-500',
       bgColor: 'bg-blue-50',
     },
     {
       years: 5,
-      icon: '📊',
+      icon: '',
       data: milestone5Years,
       color: 'border-l-4 border-green-500',
       bgColor: 'bg-green-50',
     },
     {
       years: 20,
-      icon: '🎯',
+      icon: ' ',
       data: milestone20Years,
       color: 'border-l-4 border-purple-500',
       bgColor: 'bg-purple-50',
@@ -83,7 +83,7 @@ export default function GoldGrowthProjection({ monthlyInvestment, returnRate }) 
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">🥇 Gold Investment Growth Projection (20 Years)</h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-6"> Gold Investment Growth Projection (20 Years)</h2>
 
       {monthlyInvestment > 0 ? (
         <>
@@ -174,7 +174,7 @@ export default function GoldGrowthProjection({ monthlyInvestment, returnRate }) 
           <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-amber-50 border-l-4 border-amber-500 p-4 rounded">
               <p className="text-sm text-gray-700">
-                <span className="font-bold">📌 Monthly Investment:</span> ₹{monthlyInvestment.toLocaleString()}
+                <span className="font-bold"> Monthly Investment:</span> ₹{monthlyInvestment.toLocaleString()}
               </p>
               <p className="text-sm text-gray-700 mt-1">
                 <span className="font-bold">📈 Annual Return Rate:</span> {returnRate}%
@@ -182,7 +182,7 @@ export default function GoldGrowthProjection({ monthlyInvestment, returnRate }) 
             </div>
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
               <p className="text-sm text-gray-700">
-                <span className="font-bold">💡 Tip:</span> Regular monthly investments create a powerful compound effect over time!
+                <span className="font-bold">Tip:</span> Regular monthly investments create a powerful compound effect over time!
               </p>
             </div>
           </div>
