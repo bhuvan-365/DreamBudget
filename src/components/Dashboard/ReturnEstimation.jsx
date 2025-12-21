@@ -20,7 +20,7 @@ export default function ReturnEstimation({ breakdown, returns }) {
   const investmentReturns = [
     {
       name: 'Gold',
-      icon: '🥇',
+      icon: '',
       monthly: monthlyInvestments.gold,
       annual: monthlyInvestments.gold * 12,
       rate: returns.gold,
@@ -29,7 +29,7 @@ export default function ReturnEstimation({ breakdown, returns }) {
     },
     {
       name: 'Silver',
-      icon: '🥈',
+      icon: '',
       monthly: monthlyInvestments.silver,
       annual: monthlyInvestments.silver * 12,
       rate: returns.silver,
@@ -38,7 +38,7 @@ export default function ReturnEstimation({ breakdown, returns }) {
     },
     {
       name: 'Fixed Deposit',
-      icon: '🏛️',
+      icon: '',
       monthly: monthlyInvestments.fd,
       annual: monthlyInvestments.fd * 12,
       rate: returns.fd,
@@ -49,7 +49,7 @@ export default function ReturnEstimation({ breakdown, returns }) {
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">📊 Return Estimation</h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-6">Return Estimation</h2>
 
       <div className="space-y-4">
         {investmentReturns.map((item, idx) => {
@@ -88,7 +88,7 @@ export default function ReturnEstimation({ breakdown, returns }) {
 
       <div className="mt-6 bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
         <p className="text-sm text-gray-700">
-          <span className="font-bold">💡 Note:</span> These are estimated returns based on historical averages. Actual returns may vary.
+          <span className="font-bold"> Note:</span> These are estimated returns based on historical averages. Actual returns may vary.
         </p>
       </div>
     </div>

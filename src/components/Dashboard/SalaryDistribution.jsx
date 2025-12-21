@@ -13,7 +13,7 @@ export default function SalaryDistribution({ salary, amounts, distributions }) {
 
   return (
     <div className="bg-white rounded-lg shadow-lg p-6">
-      <h2 className="text-2xl font-bold text-gray-800 mb-6">💳 Salary Distribution</h2>
+      <h2 className="text-2xl font-bold text-gray-800 mb-6"> Salary Distribution</h2>
       
       {salary > 0 ? (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -47,9 +47,9 @@ export default function SalaryDistribution({ salary, amounts, distributions }) {
           {/* Breakdown Cards */}
           <div className="space-y-3">
             {[
-              { label: 'Savings', amount: amounts.savings, color: 'bg-green-50', icon: '🏦', borderColor: 'border-l-4 border-green-500' },
-              { label: 'Investments', amount: amounts.investments, color: 'bg-blue-50', icon: '📈', borderColor: 'border-l-4 border-blue-500' },
-              { label: 'Expenditure', amount: amounts.expenditure, color: 'bg-amber-50', icon: '🛒', borderColor: 'border-l-4 border-amber-500' },
+              { label: 'Savings', amount: amounts.savings, color: 'bg-green-50', icon: '', borderColor: 'border-l-4 border-green-500' },
+              { label: 'Investments', amount: amounts.investments, color: 'bg-blue-50', icon: '', borderColor: 'border-l-4 border-blue-500' },
+              { label: 'Expenditure', amount: amounts.expenditure, color: 'bg-amber-50', icon: '', borderColor: 'border-l-4 border-amber-500' },
             ].map((item, idx) => (
               <div key={idx} className={`${item.color} ${item.borderColor} p-4 rounded`}>
                 <div className="flex justify-between items-center">

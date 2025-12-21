@@ -177,7 +177,7 @@ export default function GoldGrowthProjection({ monthlyInvestment, returnRate }) 
                 <span className="font-bold"> Monthly Investment:</span> ₹{monthlyInvestment.toLocaleString()}
               </p>
               <p className="text-sm text-gray-700 mt-1">
-                <span className="font-bold">📈 Annual Return Rate:</span> {returnRate}%
+                <span className="font-bold"> Annual Return Rate:</span> {returnRate}%
               </p>
             </div>
             <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">

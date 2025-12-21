@@ -41,7 +41,7 @@ export default function SalaryInput({ salary, setSalary }) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-6 h-full flex flex-col justify-between">
       <div>
-        <h2 className="text-2xl font-bold text-gray-800 mb-4">📊 Monthly Salary</h2>
+        <h2 className="text-2xl font-bold text-gray-800 mb-4"> Monthly Salary</h2>
         
         <div className="mb-4">
           <label className="block text-gray-700 font-semibold mb-2">
