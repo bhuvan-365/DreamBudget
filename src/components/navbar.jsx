@@ -12,17 +12,17 @@ export default function Navbar() {
 
       {/* Center - Navigation Links */}
       <ul className="flex space-x-6 text-sm">
-        <Link to='/' className="relative">
-          <a href="#" className="hover:underline underline-offset-4">Home</a>
+        <Link to='/' className="hover:underline underline-offset-4">
+          Home
         </Link>
-        <Link to='/guide'>
-          <a href="#" className="hover:underline underline-offset-4">Guide</a>
+        <Link to='/guide' className="hover:underline underline-offset-4">
+          Guide
         </Link>
-        <Link to ='/dashboard' className="relative">
-          <a href="#" className="border-b-2 border-white">Dashboard</a>
+        <Link to ='/dashboard' className="border-b-2 border-white">
+          Dashboard
         </Link>
-        <Link to='/about'>
-          <a href="#" className="hover:underline underline-offset-4">About</a>
+        <Link to='/about' className="hover:underline underline-offset-4">
+          About
         </Link>
       </ul>
 
